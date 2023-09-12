@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>HNG Stage one Task</title>
+</head>
+<body>
+    <div class="container"
+    data-testid="personal-info">
+
+    <div class="personal-data">
+      <div class="text-info">
+        <h1 data-testid="slackUserName">Janet Bello</h1>
+        <h3 data-testid="myTrack">Frontend Development Track</h3>
+        <p data-testid="mylocation">Location: Lagos</p>
+        <p data-testid="TechCompany">Interning with HNG-Zuriboard</p>
+
+      </div>
+        <div data-testid="slackDisplayImage">
+           <img src="./pictures/janetpic.png" alt="slackDisplayImage">
+        </div>
+     
+    </div>
+      
+    <div class="real-time-data" data-testid="real-time-data">
+
+      <h2 data-testid="real-time-title">Real Time Data</h2>
+        <!-- <h3 data-testid="dateTime">Current Date and Time: <span data-testid="date-time-value"></span></h3> -->
+
+       <p data-testid="currentDayOfTheWeek">Current Day: <span data-testid="day-value"></span></p>
+        <p data-testid="currentDate">Current Date: <span data-testid="date-value"></span></p>
+        <p data-testid="currentUTCTime">Current Time: <span data-testid="time-value"></span></p>
+
+    </div>
+  </div>
+
+
+    <script>
+      
+      function RealTimeData(){
+        const currentTime = new Date();
+        const dayString = getDayString(currentTime);
+        const dateString = currentTime.toLocaleDateString();
+        const timeString = currentTime.toLocaleTimeString();
+
+        // const dateTimeString = currentTime.toLocaleString();y
+        // Update the DOM element with the current date and time
+        // document.querySelector('[data-testid="date-time-value"]').textContent=dateTimeString;
+
+        document.querySelector('[data-testid="day-value"]').textContent = dayString;
+        document.querySelector('[data-testid="date-value"]').textContent = dateString;
+        document.querySelector('[data-testid="time-value"]').textContent = timeString;
+      }
+
+      function getDayString(date){
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        return days[date.getDay()];
+        
+      }
+
+        // Call the RealTimeData function initially and set it to update every second
+
+        RealTimeData();
+        setInterval(RealTimeData, 1000);
+
+      
+    </script>
+    
+</body>
+</html>
