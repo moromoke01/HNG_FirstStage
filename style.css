@@ -33,7 +33,7 @@ img{
 }
 
 .real-time-data{
-    height: 50vh;
+    height: 70vh;
     background: #90cad8;
     color: rgb(12, 68, 82);
     border-radius:20px;
@@ -43,4 +43,17 @@ img{
     font-family: Roboto;
     padding-top: 2em;
     text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+    img{
+        width: 100%;
+    
+    }
+    .text-info{
+    width: 45%;
+    margin-left:2em ;
+    margin-top: 4em;
+    font-family: Roboto;
+}
 }
